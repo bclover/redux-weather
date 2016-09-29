@@ -7,10 +7,11 @@ function calculateAverageTemp(data) {
 }
 
 export default (props, ...rest) => {
+  console.log(props);
   return (
-    <div>
-      <Sparklines svgHeight={120} svgWidth={180} data={props.data}>
-        <SparklinesLine color={props.color} />
+    <div class="chart-container">
+      <Sparklines svgHeight={200} svgWidth={200} data={props.data}>
+        <SparklinesLine color={props.style.stroke} />
         <SparklinesReferenceLine type="avg" />
       </Sparklines>
       <div>{calculateAverageTemp(props.data)} {props.units}</div>
